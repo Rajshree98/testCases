@@ -1,27 +1,18 @@
 # TestCases
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
+## spy method spyOn("serviceName","functionName")
+using spyOn function we make sure that the function is called even without calling the function.
+If we do not call spyOn and call directly the function then the original function gets called.
 
-## Development server
+And even while using spyOn if we want to call the original function we can use `spyOn(className,"functionName").and.callThrough()`
+which means spyOn gives us better control over which version of the function we want to use.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## jasmine.createSpyObj("service name",[list of function names that needs to be called])
+Used for creating mock service.
+By this method we are using mock service as a dependency and original service is not called. And when this method is used we do not need a different mocked objected for our function,so spyOn is not used.
 
-## Code scaffolding
+## All the depedencies need to be declared in the spec.ts for it to function properly. All the modules, services, services having other dependencies and for each suit to function properly all the depedncies need to be declared in each suit but that is just code repition , so instead of repeating the same code of declaring dependencies in each suit, we use `beforeEach`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## beforeEach calls the decalred set of code before running each suit.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## TestBed utility is used to provide dependendcies to our services by using dependency injection instead of calling constructions explicilty
