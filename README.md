@@ -11,8 +11,11 @@ which means spyOn gives us better control over which version of the function we 
 Used for creating mock service.
 By this method we are using mock service as a dependency and original service is not called. And when this method is used we do not need a different mocked objected for our function,so spyOn is not used.
 
-### All the depedencies need to be declared in the spec.ts for it to function properly. All the modules, services, services having other dependencies and for each suit to function properly all the depedncies need to be declared in each suit but that is just code repition , so instead of repeating the same code of declaring dependencies in each suit, we use `beforeEach`.
+##
+All the depedencies need to be declared in the spec.ts for it to function properly. All the modules, services, services having other dependencies and for each suit to function properly all the depedncies need to be declared in each suit but that is just code repition , so instead of repeating the same code of declaring dependencies in each suit, we use `beforeEach`.
 
-### beforeEach calls the decalred set of code before running each suit.
+## beforeEach
+beforeEach calls the decalred set of code before running each suit.
 
-### TestBed utility is used to provide dependendcies to our services by using dependency injection instead of calling constructions explicilty
+## TestBed
+TestBed utility is used to provide dependendcies to our services by using dependency injection instead of calling constructions explicilty.
